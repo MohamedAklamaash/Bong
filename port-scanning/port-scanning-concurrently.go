@@ -15,7 +15,7 @@ func main() {
 			addr := fmt.Sprintf("localhost:%d", j)
 			conn, err := net.Dial("tcp", addr)
 			if err != nil {
-				// Port is closed or unreachable; nothing to log here
+				// Port is closed or unreachable
 				return
 			}
 			defer conn.Close()

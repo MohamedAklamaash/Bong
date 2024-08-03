@@ -9,7 +9,7 @@ import (
 	"github.com/google/gopacket/pcap"
 )
 
-var DevName = "lo"
+var DevName = "wlp1s0"
 var Found = false
 
 func main() {
@@ -31,8 +31,8 @@ func main() {
 		log.Fatal("error in opening live")
 	}
 	defer handle.Close()
-	// berkeley packet filter for filtering https traffic
-	if err := handle.SetBPFFilter("tcp and port 21"); err != nil {
+	// berkeley packet filter for filtering ftp traffic
+	if err := handle.SetBPFFilter("tcp and port 443"); err != nil {
 		log.Panicln(err)
 	}
 	source := gopacket.NewPacketSource(handle, handle.LinkType())
