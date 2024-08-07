@@ -14,6 +14,8 @@ since our sole focus here is to make a anamoly based detection,we arent' using a
 
 Approach that i am going to take
 
+create a firewal config to allow restricted access in the proxy server
+
 naive approach 1:
 
     get the respective ip of the senders' device or the prev hop ip

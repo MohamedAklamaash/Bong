@@ -11,6 +11,7 @@ import (
 
 var DevName = "wlp1s0"
 var Found = false
+var netInterfaces []string
 
 func main() {
 	devices, err := pcap.FindAllDevs() // finding network interfaces for packet capturing
@@ -21,6 +22,7 @@ func main() {
 		if device.Name == DevName {
 			Found = true
 		}
+		netInterfaces = append(netInterfaces, device.Name)
 		fmt.Println(device)
 	}
 	if !Found {
@@ -47,4 +49,8 @@ func main() {
 		}
 		// fmt.Println(packet)
 	}
+}
+
+func GetNetworkInterfaces() []string {
+	return netInterfaces
 }

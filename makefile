@@ -1,8 +1,8 @@
-networkrun:
-	go run packetsniffing/main.go
+run:
+	@go run cmd/main.go
 
-networkbuild:
-	go build -o bin/main packetsniffing/main.go
+gotest:
+	@go test ./... -v 
 
-portrun:
-	go run port-scanning/main.go
+build:
+	@go build -o bin/main cmd/main.go
