@@ -1,3 +1,8 @@
+/*
+	Copyright Mohamed Aklamaash & Luqmaan (2024)
+
+*/
+
 package main
 
 import (
